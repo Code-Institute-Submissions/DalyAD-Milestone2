@@ -1,9 +1,9 @@
-let map, places, infoWindow;
-var markers = [];
+let map, places, infowindow;
+let markers = [];
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -33.8688, lng: 151.2195 },
+        center: { lat: 51.898470, lng: -8.475591 },
         zoom: 13,
         mapTypeId: 'roadmap'
     });
@@ -48,23 +48,31 @@ function initMap() {
                 scaledSize: new google.maps.Size(25, 25)
             };
 
-            var contentString = '<div id="content">hello</div>';
+            var contentString = {
+                fields: ['name', 'formatted_address', 'geometry']
+            };
 
-            var infowindow = new google.maps.InfoWindow({
+            var infowindow = new window.google.maps.InfoWindow({
                 content: contentString
             });
 
             // Create a marker for each place.
-            markers.push(new google.maps.Marker({
+            var marker = new google.maps.Marker({
                 map: map,
                 icon: icon,
                 title: place.name,
                 position: place.geometry.location
-            }));
+            })
 
             marker.addListener('click', function () {
+                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                    
+                    place.formatted_address + '</div>');
+                infowindow.open(map, this);
                 infowindow.open(map, marker);
             });
+
+            markers.push(marker)
 
             if (place.geometry.viewport) {
                 // Only geocodes have viewport.
