@@ -1,6 +1,8 @@
+//set global variables
 let map, places, infowindow;
 let markers = [];
 
+//initialise map
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 51.898470, lng: -8.475591 },
@@ -40,6 +42,8 @@ function initMap() {
                 console.log("Returned place contains no geometry");
                 return;
             }
+
+            // set options for place icon
             var icon = {
                 url: place.icon,
                 size: new google.maps.Size(71, 71),
@@ -48,13 +52,15 @@ function initMap() {
                 scaledSize: new google.maps.Size(25, 25)
             };
 
-            var contentString = {
-                fields: ['name', 'formatted_address', 'geometry']
-            };
-
+            // create infowindow for place info
             var infowindow = new window.google.maps.InfoWindow({
                 content: contentString
             });
+
+            // sets content for text in infowindow
+            var contentString = {
+                fields: ['name', 'formatted_address']
+            };
 
             // Create a marker for each place.
             var marker = new google.maps.Marker({
@@ -64,24 +70,26 @@ function initMap() {
                 position: place.geometry.location
             })
 
+            // listens for click and adds place name and address
             marker.addListener('click', function () {
                 infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                    
                     place.formatted_address + '</div>');
                 infowindow.open(map, this);
                 infowindow.open(map, marker);
             });
 
+            // add marker to location
             markers.push(marker)
 
+            //set bouds of map to viewport
             if (place.geometry.viewport) {
-                // Only geocodes have viewport.
                 bounds.union(place.geometry.viewport);
             } else {
                 bounds.extend(place.geometry.location);
             }
         });
-
+        
+        //set map to fit bounds of zoom
         map.fitBounds(bounds);
     });
 }

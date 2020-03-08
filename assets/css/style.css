@@ -1,9 +1,12 @@
- /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+/*map and searchbox*/
       #map {
-        height: 50%;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40%;
+        width: 80%;
       }
-      /* Optional: Makes the sample page fill the window. */
+
       html, body {
         height: 100%;
         margin: 0;
@@ -63,6 +66,7 @@
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
         width: 400px;
+        margin-top: 10px;
       }
 
       #pac-input:focus {
@@ -78,4 +82,31 @@
       }
       #target {
         width: 345px;
+      }
+
+/*global nav*/
+
+      .nav-item {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          margin-left: 5px;
+          margin-right: 5px;
+      }
+
+/*banner image*/
+
+      div.image {
+        content: url(https://www.mymaldives.com.au/wp-content/uploads/sites/11/2016/12/Beach-Banner.jpg);
+        max-height: 30vh;
+        min-width: 100vw;
+      }
+
+/*welcome page jumbotron*/
+
+      .jumbotron {
+          height: 40%;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 30px;
       }
