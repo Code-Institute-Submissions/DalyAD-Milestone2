@@ -8,9 +8,12 @@
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Places Search Box</title>
-	<style>
-
-	</style>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+      emailjs.init("user_DL2dgZsqSK1Eo5TqICPg9");
+   })();
+	</script>
 </head>
 
 <body>
@@ -30,60 +33,26 @@
 			</li>
 		</ul>
 	</section>
-	<section>
-		<div class="container contact">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="contact-info">
-						<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-						<h2>Contact Us</h2>
-						<h4>We would love to hear from you !</h4>
-					</div>
-				</div>
-				<div class="col-md-9">
-					<div class="contact-form">
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="fname">First Name:</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
-				  </div>
-							</div>
-							<div class="form-group">
-								<label class="control-label col-sm-2" for="lname">Last Name:</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
-				  </div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-sm-2" for="email">Email:</label>
-									<div class="col-sm-10">
-										<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-				  </div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-sm-2" for="comment">Comment:</label>
-										<div class="col-sm-10">
-											<textarea class="form-control" rows="5" id="comment"></textarea>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10">
-											<button type="submit" class="btn btn-default">Submit</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
+	<section class="container">
+		<div class="bg-color-contact">
+			<div>
+				<h3 class="contact-heading uppercase text-center">Contact Us</h3>
+				<h5 class="uppercase text-center">We're always happy to hear from our users!</h5>
+			</div>
+			<div class="center-form">
+				<form onsubmit="return sendMail(this);" id="my_form">
+					<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+					<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+					<textarea rows="5" name="feedback" class="form-control" id="feedback" placeholder="Have some feedback for us?" required></textarea>
+					<button type="submit" id="formButton"class="btn btn-secondary center-block">Send Feedback</button>
+				</form>
+			</div>
+		</div>
 	</section>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
 	</script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUQ4JeJnlgG0qPUjV7lTomSpNTOFQ3j44&libraries=places&callback=initMap"
-		async defer></script>
-
+	<script src="assets/js/sendEmail.js"></script>
 </body>
 
 </html>

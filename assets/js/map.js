@@ -1,6 +1,7 @@
 //set global variables
 let map, places, infowindow;
 let markers = [];
+var searchTerm;
 
 //initialise map
 function initMap() {
@@ -52,15 +53,15 @@ function initMap() {
                 scaledSize: new google.maps.Size(25, 25)
             };
 
-            // create infowindow for place info
-            var infowindow = new window.google.maps.InfoWindow({
-                content: contentString
-            });
-
             // sets content for text in infowindow
             var contentString = {
                 fields: ['name', 'formatted_address']
             };
+
+            // create infowindow for place info
+            var infowindow = new window.google.maps.InfoWindow({
+                content: contentString
+            });
 
             // Create a marker for each place.
             var marker = new google.maps.Marker({
@@ -88,8 +89,16 @@ function initMap() {
                 bounds.extend(place.geometry.location);
             }
         });
-        
+
         //set map to fit bounds of zoom
         map.fitBounds(bounds);
     });
+}
+
+document.getElementById('pac-input').onclick = function () {
+    var input = document.getElementById('cafes');
+
+    google.maps.event.trigger(input, focus, {});
+    google.maps.event.trigger(input, keydown, { keycode: 13 });
+    google.maps.event.trigger(this, focus, {});
 }
