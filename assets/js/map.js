@@ -95,10 +95,14 @@ function initMap() {
     });
 }
 
-document.getElementById('pac-input').onclick = function () {
-    var input = document.getElementById('cafes');
-
-    google.maps.event.trigger(input, focus, {});
-    google.maps.event.trigger(input, keydown, { keycode: 13 });
-    google.maps.event.trigger(this, focus, {});
-}
+$('.placeButton').on('click', function () {
+    var getThisId = $(this).attr('id');
+    // $('#pac-input').val(getThisId).focus().trigger({
+    //     type: 'keypress',
+    //     which: 13
+    // });
+    $('#pac-input').val(getThisId).focus();
+    google.maps.event.trigger($('#pac-input'), 'focus');
+    google.maps.event.trigger($('#pac-input'), 'keydown', { keyCode: 13 });
+    google.maps.event.trigger(this, 'focus');
+});

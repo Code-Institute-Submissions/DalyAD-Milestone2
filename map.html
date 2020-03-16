@@ -8,9 +8,7 @@
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Places Search Box</title>
-	<style>
 
-	</style>
 </head>
 
 <body>
@@ -31,18 +29,16 @@
 		</ul>
 	</section>
 	<div id="map"></div>
-	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+	    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 	<section>
-		<button href="#" id="cafes">cafes</button>
+		<button href="#" id="cafes" class="placeButton">cafes</button>
 	</section>
-	<script src="assets/js/map.js">
-		<script src="https://code.jquery.com/jquery-3.4.1.js"
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
 	</script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUQ4JeJnlgG0qPUjV7lTomSpNTOFQ3j44&libraries=places&callback=initMap"
-		async defer></script>
-
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUQ4JeJnlgG0qPUjV7lTomSpNTOFQ3j44&libraries=places&callback=initMap">
+	</script>
+	<script src="assets/js/map.js"></script>
 </body>
 
 </html>
