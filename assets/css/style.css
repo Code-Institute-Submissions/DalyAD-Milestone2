@@ -80,33 +80,71 @@
         font-weight: 500;
         padding: 6px 12px;
       }
+
       #target {
         width: 345px;
       }
 
 /*global nav*/
 
-      .nav-item {
-          margin-top: 5px;
-          margin-bottom: 5px;
-          margin-left: 5px;
-          margin-right: 5px;
-      }
+.nav-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.nav {
+    min-width: 100vh;
+    background-color: #b9992d;
+}
 
 /*banner image*/
+div.hero-image {
 
-      div.image {
-        content: url(https://www.mymaldives.com.au/wp-content/uploads/sites/11/2016/12/Beach-Banner.jpg);
-        max-height: 30vh;
-        min-width: 100vw;
-      }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/hotairballoons.jpg");
+
+
+  min-height: 30vh;
+  min-width: 100vw; 
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+div.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
 
 /*welcome page jumbotron*/
 
       .jumbotron {
           height: 40%;
-          width: 80%;
+          max-width: 80%;
           margin-left: auto;
           margin-right: auto;
-          margin-top: 30px;
+          margin-top: 20px;
       }
+
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainbanner {
+     margin: 0px;
+    padding: 0px;
+}
+
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+}
