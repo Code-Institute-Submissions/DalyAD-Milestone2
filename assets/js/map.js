@@ -1,7 +1,11 @@
-//set global variables
+//set global letiables
 let map, places, infowindow;
 let markers = [];
-var searchTerm;
+let bounds;
+let searchTerm;
+let searchBox;
+let icon;
+let marker;
 
 //initialise map
 function initMap() {
@@ -12,8 +16,8 @@ function initMap() {
     });
 
     // Create the search box and link it to the UI element.
-    var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
+    let input = document.getElementById('searchMap');
+    searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
     // Bias the SearchBox results towards current map's viewport.
@@ -37,7 +41,7 @@ function initMap() {
         markers = [];
 
         // For each place, get the icon, name and location.
-        var bounds = new google.maps.LatLngBounds();
+        bounds = new google.maps.LatLngBounds();
         places.forEach(function (place) {
             if (!place.geometry) {
                 console.log("Returned place contains no geometry");
@@ -45,7 +49,7 @@ function initMap() {
             }
 
             // set options for place icon
-            var icon = {
+            icon = {
                 url: place.icon,
                 size: new google.maps.Size(71, 71),
                 origin: new google.maps.Point(0, 0),
@@ -54,33 +58,14 @@ function initMap() {
             };
 
             // sets content for text in infowindow
-            var contentString = {
+            let contentString = {
                 fields: ['name', 'formatted_address']
             };
 
             // create infowindow for place info
-            var infowindow = new window.google.maps.InfoWindow({
+            let infowindow = new window.google.maps.InfoWindow({
                 content: contentString
             });
-
-            // Create a marker for each place.
-            var marker = new google.maps.Marker({
-                map: map,
-                icon: icon,
-                title: place.name,
-                position: place.geometry.location
-            })
-
-            // listens for click and adds place name and address
-            marker.addListener('click', function () {
-                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                    place.formatted_address + '</div>');
-                infowindow.open(map, this);
-                infowindow.open(map, marker);
-            });
-
-            // add marker to location
-            markers.push(marker)
 
             //set bouds of map to viewport
             if (place.geometry.viewport) {
@@ -95,14 +80,47 @@ function initMap() {
     });
 }
 
-$('.placeButton').on('click', function () {
-    var getThisId = $(this).attr('id');
-    // $('#pac-input').val(getThisId).focus().trigger({
-    //     type: 'keypress',
-    //     which: 13
-    // });
-    $('#pac-input').val(getThisId).focus();
-    google.maps.event.trigger($('#pac-input'), 'focus');
-    google.maps.event.trigger($('#pac-input'), 'keydown', { keyCode: 13 });
-    google.maps.event.trigger(this, 'focus');
+$('.placeButton').on('blur', function () {
+
 });
+
+function showCafes() {
+
+    let request = {
+        bounds: map.getBounds(),
+        type: ['cafe']
+    };
+
+    function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+
+}
+
+function createMarker(place) {
+                // Create a marker for each place.
+            marker = new google.maps.Marker({
+                map: map,
+                icon: place.icon,
+                title: place.name,
+                position: place.geometry.location
+            })
+
+            // listens for click and adds place name and address
+            marker.addListener('click', function () {
+                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                    place.formatted_address + '</div>');
+                infowindow.open(map, this);
+                infowindow.open(map, marker);
+            });
+
+            // add marker to location
+            markers.push(marker)
+}

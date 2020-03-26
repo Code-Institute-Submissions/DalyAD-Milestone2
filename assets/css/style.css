@@ -57,7 +57,7 @@
         font-weight: 300;
       }
 
-      #pac-input {
+      #searchMap {
         background-color: #fff;
         font-family: Roboto;
         font-size: 15px;
@@ -69,7 +69,7 @@
         margin-top: 10px;
       }
 
-      #pac-input:focus {
+      #searchMap:focus {
         border-color: #4d90fe;
       }
 
@@ -96,7 +96,7 @@
 
 .nav {
     min-width: 100vh;
-    background-color: #b9992d;
+    background-color: #0a92ba;
 }
 
 /*banner image*/
@@ -132,7 +132,25 @@ div.hero-text {
           margin-left: auto;
           margin-right: auto;
           margin-top: 20px;
+          background-color: #e9ecef87;
       }
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #607d8b;
+    border-color: #ffffff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #607D8B;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    background-color: #70707000;
+}
 
 .row {
     margin: 0px;
@@ -147,4 +165,40 @@ div.hero-text {
 .container-fluid{
     padding-left: 0px;
     padding-right: 0px;
+}
+
+body {
+
+  background-image:url("images/bgsplash.jpg");
+
+
+  min-height: 100vh;
+  min-width: 100vw; 
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+#fullname {
+    margin: 10px;
+}
+
+#emailaddress {
+    margin: 10px;
+}
+
+#feedback {
+    margin: 10px;
+}
+
+#formButton {
+    margin: 10px;
+}
+
+.contactBanner{
+    margin: 20px;
 }
