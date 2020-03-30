@@ -202,3 +202,29 @@ body {
 .contactBanner{
     margin: 20px;
 }
+
+.placeButton{
+    margin: 5px 0px, 0px, 0px;
+    max-width: 13vw;
+}
+
+/* button sizing */
+.placeButton{
+    max-width: 13vw;
+}
+
+#cafes {
+    margin: 5px 5px, 0px, 0px;
+}
+
+#restaurants {
+    margin: 5px 5px, 0px, 5px;
+}
+
+#bars {
+    margin: 5px 5px, 0px, 5px;
+}
+
+#atms {
+    margin: 5px 5px, 0px, 5px;
+}
