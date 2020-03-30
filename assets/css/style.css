@@ -102,7 +102,7 @@
 /*banner image*/
 div.hero-image {
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/hotairballoons.jpg");
+  background-image: url("images/hotairballoons.jpg");
 
 
   min-height: 30vh;
@@ -121,19 +121,28 @@ div.hero-text {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+}
+
+.mainbanner {
+     margin: 0px;
+    padding: 0px;
 }
 
 /*welcome page jumbotron*/
 
-      .jumbotron {
-          height: 40%;
-          max-width: 80%;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 20px;
-          background-color: #e9ecef87;
-      }
+.jumbotron {
+    height: 40%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: #e9ecef87;
+}
+
+.btn-primary:hover{
+    background-color: #fff;
+    color: #000;
+}
 
 .btn-primary {
     color: #ffffff;
@@ -141,24 +150,33 @@ div.hero-text {
     border-color: #ffffff;
 }
 
+.nav-link:hover {
+    background-color: #fff;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #607D8B;
 }
 
+/*global*/
+
+a:hover{
+    color: #000;
+}
 a {
-    color: #000000;
+    color: #fff;
     text-decoration: none;
     background-color: #70707000;
 }
 
-.row {
+.col {
     margin: 0px;
-    padding: 0px;
+    padding: 0px;   
 }
 
-.mainbanner {
-     margin: 0px;
+.row {
+    margin: 0px;
     padding: 0px;
 }
 
@@ -175,6 +193,7 @@ body {
   min-height: 100vh;
   min-width: 100vw; 
 
+  font-family:  'Oswald', sans-serif;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -182,6 +201,7 @@ body {
   position: relative;
 }
 
+/*contact.html*/
 
 #fullname {
     margin: 10px;
@@ -203,28 +223,50 @@ body {
     margin: 20px;
 }
 
-.placeButton{
-    margin: 5px 0px, 0px, 0px;
-    max-width: 13vw;
+.btn-secondary:hover{
+    background-color: #fff;
+    color: #000;
 }
 
-/* button sizing */
-.placeButton{
-    max-width: 13vw;
+.btn-secondary {
+    color: #ffffff;
+    background-color: #607d8b;
+    border-color: #ffffff;
 }
 
-#cafes {
-    margin: 5px 5px, 0px, 0px;
+/*map.html button sizing */
+.current{
+    color: #ffffff;
+    background-color: #607d8b;
+    border-color: #ffffff;
 }
 
-#restaurants {
-    margin: 5px 5px, 0px, 5px;
+/*font*/
+h1{
+    text-shadow: 2px 2px #ff0000;
+    font-family:  'Oswald', sans-serif;
+    font-size: 35px;
+    color: #fff;
 }
 
-#bars {
-    margin: 5px 5px, 0px, 5px;
+h3{
+    font-family:  'Oswald', sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px #0a92ba;
 }
 
-#atms {
-    margin: 5px 5px, 0px, 5px;
+h5{
+    font-family:  'Oswald', sans-serif;
+    font-size: 20px;
+    text-shadow: 2px 2px #0a92ba;
+}
+
+p{
+    font-family:  'Oswald', sans-serif;
+    font-size: 22px;
+    text-shadow: 2px 2px #0a92ba;
+}
+
+p.lead {
+    font-size: 25px;
 }

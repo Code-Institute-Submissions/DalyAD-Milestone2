@@ -12,18 +12,16 @@
 </head>
 
 <body>
-	<header>
-		<section class="container mainbanner">
-			<header class="row">
-				<div class="hero-image col-lg-12">
-					<div class="hero-text">
-						<h1>Hello World</h1>
-						<p>This is a test.</p>
-					</div>
+	<section class="container mainbanner">
+		<header class="row">
+			<div class="hero-image col">
+				<div class="hero-text">
+					<h1 class="lead-text"><u><a href="index.html">Travel Helper</a></u></h1>
+					<p>Welcome to your next journey!</p>
 				</div>
-			</header>
-		</section>
-	</header>
+			</div>
+		</header>
+	</section>
 	<section>
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item">
@@ -40,14 +38,20 @@
 	<div id="map"></div>
 	<input id="searchMap" class="controls" type="text" placeholder="Search Box">
 	<section class="container-fluid">
-		<div class="row justify-content-center">
-			<button href="#" id="cafes" class="placeButton col-2" onclick="showCafes()">Cafes</button>
-			<button href="#" id="restaurants" class="placeButton col-2" onclick="showRestaurants()">Restaurants</button>
-			<button href="#" id="bars" class="placeButton col-2" onclick="showBars()">Bars</button>
-			<button href="#" id="atms" class="placeButton col-2" onclick="showAtms()">ATMs</button>
-			<button href="#" id="attractions" class="placeButton col-2" onclick="showTouristattr()">Attractions</button>
-			<button href="#" id="groceries" class="placeButton col-2" onclick="showGroceries()">Groceries</button>
-		</div>
+		<ul class="row  justify-content-center" style="list-style: none;">
+			<li><button href="#" id="cafes" class="placeButton cafesbutton btn m-2" onclick="showCafes()">Cafes</button>
+			</li>
+			<li><button href="#" id="restaurants" class="placeButton restaurantsbutton btn m-2" onclick="showRestaurants()">Restaurants</button>
+			</li>
+			<li><button href="#" id="bars" class="placeButton barsbutton btn m-2" onclick="showBars()">Bars</button>
+			</li>
+			<li><button href="#" id="atms" class="placeButton atmsbutton btn m-2" onclick="showAtms()">ATMs</button>
+			</li>
+			<li><button href="#" id="attractions" class="placeButton attractionsbutton btn m-2" onclick="showTouristattr()">Attractions</button>
+			</li>
+			<li><button href="#" id="groceries" class="placeButton groceriesbutton btn m-2" onclick="showGroceries()">Groceries</button>
+			</li>
+		</ul>
 	</section>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -57,6 +61,7 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUQ4JeJnlgG0qPUjV7lTomSpNTOFQ3j44&libraries=places&callback=initMap">
 	</script>
 	<script src="assets/js/map.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
