@@ -7,13 +7,26 @@ Welcome to the site and I hope you enjoy it. It's a simple idea for allowing you
 I created this project as a solution for two groups of people. The first being my older relatives who are not capable of using smartphones and the second group being those like myself who like to plan their
 journey and become familiar with an area before they travel there. Or to decide whether it is a good place to travel based on what is in the area.
 
-##wireframes
+<h2>Wireframes</h2>
 
+All wireframes were made using Balsamiq.
+
+<h3>index.html</h3>
 <div align="center">
     <img src="wireframes/index.html.png">
 </div>
 
-###User Stories
+<h3>map.html</h3>
+<div align="center">
+    <img src="wireframes/map.html.png">
+</div>
+
+<h3>contact.html</h3>
+<div align="center">
+    <img src="wireframes/contact.html.png">
+</div>
+
+<h2>User Stories</h2>
 
 - As an older aged person I would find it difficult to operate a smartphone. While using this site I can access it from any PC and look for places to see in any possible destination
   this will save me time in a travel agents and I don't need to bother with any bulky paper maps. I can also save money by avoiding places that do not have all the facilities I would
@@ -24,22 +37,22 @@ journey and become familiar with an area before they travel there. Or to decide 
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
-## Features
+<h2>Features</h2>
 
-index.html
+<h3>index.html</h3>
 - On this page I just made a simple jumbotron with bootstrap and linked the button to my map.html page. The jumbotron gives a
   brief introduction and explanation as to how to operate the map.
 
-map.html
+<h3>map.html</h3>
 - This page is where most of the functionality and purpose of the site is. I have udes google maps and places APIs in 
   conjunction with a searchbox and buttons. Users can use the searchbox to load their desired city, then use the below buttons
   to display all ATMs, Cafes, Restaurants, Grocery Stores, Attractions or Bars in the bounds of the map.
 
-contact.html
+<h3>contact.html</h3>
 - This is a fully functioning contact form that will send the user an email letting them know that their email has been received and sending me an
   email with the users message and contact details.
  
-### Existing Features
+<h2>Existing Features</h2>
 Global - The site has a navbar loaded from bootstrap linking to each page and the logo in the middle of the banner image as an anchor link to the homepage.
 
 index.html - As the homepage this has a jumbotron with instrutions on how to use the map and a button to bring the user to the map page.
