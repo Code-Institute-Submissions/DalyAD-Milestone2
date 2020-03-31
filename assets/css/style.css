@@ -244,27 +244,22 @@ body {
 /*font*/
 h1{
     text-shadow: 2px 2px #ff0000;
-    font-family:  'Oswald', sans-serif;
     font-size: 35px;
     color: #fff;
 }
 
 h3{
-    font-family:  'Oswald', sans-serif;
     font-size: 30px;
     text-shadow: 2px 2px #0a92ba;
 }
 
 h5{
-    font-family:  'Oswald', sans-serif;
     font-size: 20px;
     text-shadow: 2px 2px #0a92ba;
 }
 
 p{
-    font-family:  'Oswald', sans-serif;
     font-size: 22px;
-    text-shadow: 2px 2px #0a92ba;
 }
 
 p.lead {
