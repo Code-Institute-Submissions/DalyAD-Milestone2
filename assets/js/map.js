@@ -65,239 +65,6 @@ function initMap() {
     });
 }
 
-function showCafes() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['cafe']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-}
-
-function showRestaurants() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['restaurant']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-}
-
-function showBars() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['bar']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-}
-
-function showAtms() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['atm']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-
-}
-
-function showCarrental() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['car_rental']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-}
-
-function showTouristattr() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['tourist_attraction']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-}
-
-function showGroceries() {
-
-    let request = {
-        bounds: map.getBounds(),
-        type: ['grocery_or_supermarket']
-    };
-
-    markers.forEach(function (marker) {
-        marker.setMap(null);
-    });
-    markers = [];
-
-    function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
-        }
-    }
-
-    // sets content for text in infowindow
-    contentString = {
-        fields: ['name', 'vicinity']
-    };
-
-    // create infowindow for place info
-    infowindow = new window.google.maps.InfoWindow()
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-}
-
 function createMarker(place) {
 
     icon = {
@@ -330,4 +97,39 @@ function createMarker(place) {
     markers.push(marker)
 }
 
+/**
+ * shows points of interest on the map
+ * @param {string} type type to be displayed
+ */
+function showPOIs(type) {
 
+    let request = {
+        bounds: map.getBounds(),
+        type: [type]
+    };
+
+    markers.forEach(function (marker) {
+        marker.setMap(null);
+    });
+    markers = [];
+
+    function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    // sets content for text in infowindow
+    contentString = {
+        fields: ['name', 'vicinity']
+    };
+
+    // create infowindow for place info
+    infowindow = new window.google.maps.InfoWindow()
+
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+
+}

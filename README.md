@@ -1,5 +1,7 @@
 # Travel Helper
 
+<h2>https://dalyad.github.io/Milestone2/</h2>
+
 Welcome to the site and I hope you enjoy it. It's a simple idea for allowing you to locate your city on a map then use the buttons to view certain amenities when clicked. 
  
 ## UX
@@ -28,14 +30,9 @@ All wireframes were made using Balsamiq.
 
 <h2>User Stories</h2>
 
-- As an older aged person I would find it difficult to operate a smartphone. While using this site I can access it from any PC and look for places to see in any possible destination
-  this will save me time in a travel agents and I don't need to bother with any bulky paper maps. I can also save money by avoiding places that do not have all the facilities I would
-  like in a holiday destination. Dan (74)
+- As a user I want to be able to search for a city and then display all atms in an area.
   
-- I love to travel but I hate being outside my comfort zone. Before I travel I like to look at the place and familiarize myself with the area before I ever leave home. I am far more
-  comfortable one I arrive and see things I recognise from the site. Amy (26)
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+- As a user I want to send an email to the site creators.
 
 <h2>Features</h2>
 
@@ -44,7 +41,7 @@ This section is also where you would share links to any wireframes, mockups, dia
   brief introduction and explanation as to how to operate the map.
 
 <h3>map.html</h3>
-- This page is where most of the functionality and purpose of the site is. I have udes google maps and places APIs in 
+- This page is where most of the functionality and purpose of the site is. I have used google maps and places APIs in 
   conjunction with a searchbox and buttons. Users can use the searchbox to load their desired city, then use the below buttons
   to display all ATMs, Cafes, Restaurants, Grocery Stores, Attractions or Bars in the bounds of the map.
 
@@ -93,12 +90,26 @@ been received and someone will be in contact shortly. I also receive an email wi
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
     4. Try to submit the form with all inputs valid and verify that a success message appears.
 
+1. City search:
+    1. I want to search for Paris on the map.
+    2. I type Paris and hit enter.
+    3. The map loads to Paris.
+
+1. Place search:
+    1. I want to display all restaurants in Paris.
+    2. Once loaded I click on the restaurants buttons and all restaurants display.
+    3. I click on a few of the markers and ensure they are infact restaurants. 
+
 ## Deployment
 
 I used GitHub pages to deploy my site.
 
+This site can also be deployed by selecting the 'Clone' option from the below GitHub repository.
+
+https://github.com/DalyAD/Milestone2
+
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The bulk of the map code was implimented from the Google maps documentation, then edited to suit the purpose of the site.
 
 ### Media
 - The photos along with the marker icons used in this site were obtained from google images
