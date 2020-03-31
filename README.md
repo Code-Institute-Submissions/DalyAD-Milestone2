@@ -20,16 +20,16 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Features
 
-####index.html
+###index.html
 - On this page I just made a simple jumbotron with bootstrap and linked the button to my map.html page. The jumbotron gives a
   brief introduction and explanation as to how to operate the map.
 
-####map.html
+###map.html
 - This page is where most of the functionality and purpose of the site is. I have udes google maps and places APIs in 
   conjunction with a searchbox and buttons. Users can use the searchbox to load their desired city, then use the below buttons
   to display all ATMs, Cafes, Restaurants, Grocery Stores, Attractions or Bars in the bounds of the map.
 
-####contact.html
+###contact.html
 - This is a fully functioning contact form that will send the user an email letting them know that their email has been received and sending me an
   email with the users message and contact details.
  
