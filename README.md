@@ -7,6 +7,12 @@ Welcome to the site and I hope you enjoy it. It's a simple idea for allowing you
 I created this project as a solution for two groups of people. The first being my older relatives who are not capable of using smartphones and the second group being those like myself who like to plan their
 journey and become familiar with an area before they travel there. Or to decide whether it is a good place to travel based on what is in the area.
 
+##wireframes
+
+<div align="center">
+    <img src="wireframes/index.html.png">
+</div>
+
 ###User Stories
 
 - As an older aged person I would find it difficult to operate a smartphone. While using this site I can access it from any PC and look for places to see in any possible destination
